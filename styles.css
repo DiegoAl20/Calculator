@@ -21,15 +21,16 @@ main {
 /* Styles of the calculator*/
 .calculator {
     width: 300px;
-    height: 79%; 
+    min-height: 80%; 
     padding: 10px;
     border-radius: 10px;
     background-color: white;
     box-shadow: 2px 4px 4px 2px rgba(255, 255, 255, 0.377);
+    min-height: 79%;
 
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(6, 1fr);
+    grid-template-columns: repeat(4, minmax(1fr, 1fr));
+    grid-template-rows: repeat(6, minmax(1fr, 1fr));
     gap: 8px;
 }
 
@@ -39,11 +40,21 @@ main {
     background-color: #80808015;
     font-size: 2.5ch;
     padding: 5px;
+    color: rgba(0, 0, 0, 0.849);
+    min-height: 80px;
 
     display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    align-items: flex-start;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+#operations {
+    word-break: break-all;
+}
+
+#result {
+    font-weight: 600;
 }
 
 /* Buttons styles */
@@ -82,7 +93,6 @@ main {
 /* Footer styles*/
 
 .footer {
-    height: 10vh;
     display: flex;
     justify-content: center;
 }
@@ -99,4 +109,11 @@ a {
 svg {
     width: 30px;
     height: 30px;
+}
+
+@media(width < 425px) {
+    .calculator {
+        width: 90vw;
+        min-width: min-content;
+    }
 }
