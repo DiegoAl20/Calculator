@@ -45,16 +45,13 @@ main {
 
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: flex-end;
 }
 
 #operations {
     word-break: break-all;
-}
-
-#result {
-    font-weight: 600;
+    font-size: 3rem;
 }
 
 /* Buttons styles */
@@ -104,6 +101,7 @@ main {
 
 a {
     color: white;
+    text-decoration: underline;
 }
 
 svg {
